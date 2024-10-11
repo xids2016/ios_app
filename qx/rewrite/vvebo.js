@@ -3,6 +3,7 @@
 QuantumultX 修复 vvebo 用户主页的显示脚本
 参考：https://raw.githubusercontent.com/suiyuran/stash/main/override/fix-vvebo.stoverride
 2024-05-09：修正在 Quantumult X 1.5.0-830 版本中出现的问题。
+## https://raw.githubusercontent.com/bin64/Scripts/main/QuantumultX/vvebo.js
 *************************
 
 [mitm]
