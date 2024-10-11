@@ -1,5 +1,5 @@
 /******************************
-
+## https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/cubox.js
 脚本功能：cubox-收藏阅读+解锁VIP
 
 *******************************
