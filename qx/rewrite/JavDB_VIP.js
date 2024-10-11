@@ -1,6 +1,7 @@
 /*************************************
 
 项目名称：JavDB-净化/解锁VIP
+## https://raw.githubusercontent.com/chxm1023/Rewrite/main/JavDB.js
 
 **************************************
 
