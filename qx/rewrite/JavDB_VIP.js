@@ -6,8 +6,8 @@
 **************************************
 
 [rewrite_local]
-^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(users|startup|ads) url script-response-body https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/JavDB.js
-;^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(movies|movie_played) url script-request-header https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/JavDB.js
+^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(users|startup|ads) url script-response-body https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/JavDB_VIP.js
+;^https?:\/\/api\.hechuangxinxi\.xyz\/api\/v\d\/(movies|movie_played) url script-request-header https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/JavDB_VIP.js
 
 [mitm]
 hostname = api.hechuangxinxi.xyz
