@@ -1,6 +1,7 @@
 /******************************
 
 脚本功能：幕布-大纲笔记+解锁VIP
+## https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/mubu.js
 
 *******************************
 
