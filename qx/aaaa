@@ -1,3 +1,84 @@
+
+# Unbreak 规则修正
+https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, tag=规则修正, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
+
+# 去广告
+# 拒绝
+
+# 各种服务
+# 直连
+# 微信
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list
+# 支付宝
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AliPay/AliPay.list
+# 阿里巴巴
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Alibaba/Alibaba.list
+# 京东
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JingDong/JingDong.list
+# 腾讯
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Tencent/Tencent.list
+# 美团
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTuan/MeiTuan.list
+# 小米
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/XiaoMi/XiaoMi.list
+# 银行app、云闪付
+# 招商银行
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/CMB/CMB.list
+# 中国银行
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BOC/BOC.list
+# 建设银行
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/CCB/CCB.list
+# 农业银行
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ABC/ABC.list
+# 兴业银行
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/xingye.list
+# 中信银行
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/zhongxin.list
+# 平安银行
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/pingan.list
+# 云闪付
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/yunshanfu.list
+# 数字人民币
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/szrmb.list
+
+# 节点
+# google
+# tiktok
+# youtube
+# telegram
+# instagram
+# x
+# openai
+# Spotify
+# apple
+# 加密货币
+# Netflix
+# Disney
+# 国外影音
+# 港台番剧
+# PayPal
+# Microsoft
+# StreamingCN
+
+
+# 全球
+
+
+# 国内
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 7
 604800
 
