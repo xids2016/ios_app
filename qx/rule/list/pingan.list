@@ -1,0 +1,11 @@
+# 平安
+HOST-SUFFIX,pingan.com.cn,PA
+HOST-SUFFIX,yqbimg.net,PA
+HOST-SUFFIX,orangebank.com.cn,PA
+HOST-SUFFIX,pingan.com.cn.cdngtm.com,PA
+HOST-SUFFIX,jk.cn,PA
+HOST-SUFFIX,sdb.com.cn,PA
+IP-CIDR,202.69.23.211/32,,PA
+IP-CIDR,202.69.23.214/32,,PA
+IP-CIDR,45.65.23.16/32,,PA
+IP-CIDR,120.52.48.36/32,,PA
