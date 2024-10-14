@@ -1,0 +1,4 @@
+# 数字rmb
+HOST-SUFFIX,pbcdci.cn,SZRMB
+HOST-SUFFIX,convection.cn,SZRMB
+IP-CIDR,114.242.241.129/32,SZRMB
