@@ -1,428 +1,162 @@
-Google
-YouTube
-TikTok
-Telegram
-OpenAI
-Netfilx
-Spotify
-Apple
 
-direct
-reject
+[general]
+dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.pingan.com.cn
+geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/Orz-3/Orz-3/master/QuantumultX/IP.js
+resource_parser_url= https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+profile_img_url= https://raw.githubusercontent.com/Orz-3/mini/master/Color/Personal.png
+server_check_url=http://www.gstatic.com/generate_204
+#第一个filter为4g模式开启规则分流，第二个filter为其他wifi下开启规则分流，第三个wifi1修改成你路由器翻墙的wifi名开启直连模式，第四个wifi2为你公司或者其他有路由器翻墙的WiFi名走直连）
+#默认关闭根据wifi切换模式，如需开启，删除下方的“#”即可！
+#running_mode_trigger=filter, filter, wifi1:all_direct, wifi2: all_direct
 
-
-# Unbreak 规则修正
-https://raw.githubusercontent.com/ddgksf2013/Filter/master/Unbreak.list, tag=规则修正, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list, tag=修正, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list, tag=Direct, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-
-# 去广告
-# 拒绝
-# Advertising 广告
-https://raw.githubusercontent.com/w37fhy/QuantumultX/master/Rules/Advertising.list, tag=🛑轻量广告拦截-拒绝, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-# NobyDa大佬去广告 -默认关闭，自行手动启用！
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=🛑重度广告拦截-拒绝, force-policy=reject, update-interval=172800, opt-parser=false, enabled=false
-# Privacy 隐私
-https://raw.githubusercontent.com/w37fhy/QuantumultX/master/Rules/Tracking.list, tag=🛑隐私保护-拒绝, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-# Hijacking 运营商劫持或恶意网站
-https://raw.githubusercontent.com/w37fhy/QuantumultX/master/Rules/Hijacking.list, tag=🛑运营商劫持-拒绝, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/Cats-Team/AdRules/main/qx.conf, tag=广告终结者, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/EAlyce/conf/main/Rule/FQNovelAdvertising.list, tag=番茄去广告, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/HTTPDNS.Block.list, tag=HTTPDNS.Block, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/As-Lucky/Lucky/main/Ruleset/AdBlock.list, tag=AD-Lucky, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-# > Advertising
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list, tag=⛔️Advertising, force-policy=reject, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
-# > Hijacking
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Hijacking.list, tag=⛔️Hijacking, force-policy=reject, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
-# > Tracking
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list, tag=⛔️Tracking, force-policy=reject, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+[dns]
+server=119.29.29.29
+server=114.114.114.114
 
 
+[policy]
+static=节点选择, 自动选择, 台湾, 香港, 日本, 韩国, 美国, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
+# 默认设置10分钟测速一次，当前使用节点延迟和最新测速延迟最低的节点相差80ms以上则切换为最新的最低延迟节点，否则继续延用节点
+url-latency-benchmark=自动选择, server-tag-regex=.*, check-interval=600, tolerance=80, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Urltest.png
+url-latency-benchmark=香港, server-tag-regex=(?=.*(港|HK|(?i)Hong))^((?!(台湾|日本|新加坡|美国|韩国|狮城|南朝鲜|US|SG|JP|KR|TW|台灣|美國|韓國|獅城)).)*$, check-interval=600, tolerance=80, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
+url-latency-benchmark=台湾, server-tag-regex=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$, check-interval=600, tolerance=80, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
+url-latency-benchmark=日本, server-tag-regex=(?=.*(日本|JP|(?i)Japan))^((?!(香港|台湾|新加坡|美国|韩国|狮城|南朝鲜|US|SG|KR|HK|TW|台灣|美國|韓國|獅城)).)*$, check-interval=600, tolerance=100, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+url-latency-benchmark=韩国, server-tag-regex=(?=.*(KR|Korea|KOR|首尔|韩|韓|(?i)Korea))^((?!(香港|台湾|新加坡|美国|狮城|南朝鲜|US|SG|HK|TW|台灣|美國|獅城)).)*$, check-interval=600, tolerance=100, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png
+url-latency-benchmark=新加坡, server-tag-regex=(?=.*(新加坡|狮城|SG|(?i)Singapore))^((?!(香港|台湾|日本|美国|韩国|南朝鲜|US|JP|KR|HK|TW|台灣|美國|韓國)).)*$, check-interval=600, tolerance=100, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
+url-latency-benchmark=美国, server-tag-regex=(?=.*(美国|美國|US|洛杉矶|西雅图|(?i)States|American))^((?!(香港|台湾|日本|新加坡|韩国|狮城|南朝鲜|SG|JP|KR|HK|TW|台灣|韓國|獅城)).)*$, check-interval=600, tolerance=100, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+static=TikTok, direct, 台湾, 日本, 韩国, 美国, 节点选择, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
+static=OpenAI, direct, 台湾, 日本, 韩国, 美国, 节点选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bot.png
+static=Netfilx, server-tag-regex=(nf|解锁NF|NF|奈|Netflix), check-interval=600, tolerance=100, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Netflix.png
+static=漏网之鱼, 节点选择, 自动选择, 台湾, 日本, 韩国, 美国, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
 
+[server_remote]
 
-# 各种服务
-# 直连
-# 微信
-# 微信直连
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list, tag=🎯微信直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 支付宝
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AliPay/AliPay.list, tag=🎯支付宝直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 阿里巴巴
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Alibaba/Alibaba.list, tag=🎯阿里巴巴直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 京东
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JingDong/JingDong.list, tag=🎯京东直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 腾讯
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Tencent/Tencent.list, tag=🎯腾讯直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 美团
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTuan/MeiTuan.list, tag=🎯美团直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 小米
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/XiaoMi/XiaoMi.list, tag=🎯小米直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 银行app、云闪付
-# 招商银行
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/CMB/CMB.list, tag=🎯招商银行直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 中国银行
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BOC/BOC.list, tag=🎯中国银行直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 建设银行
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/CCB/CCB.list, tag=🎯建设银行直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 农业银行
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ABC/ABC.list, tag=🎯农业银行直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 兴业银行
-https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/xingye.list, tag=🎯兴业银行直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 中信银行
-https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/zhongxin.list, tag=🎯中信银行直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 平安银行
-https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/pingan.list, tag=🎯平安银行直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 云闪付
-https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/yunshanfu.list, tag=🎯云闪付直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-# 数字人民币
-https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rule/list/szrmb.list, tag=🎯数字人民币直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-
-
-# 节点
-# 苹果分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list, tag=🍎苹果服务, force-policy=Apple, update-interval=172800, opt-parser=false, enabled=true
-# Google分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list, tag=🎯Google规则, force-policy=Google, update-interval=172800, opt-parser=false, enabled=true
-# Telegram分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list, tag=🎯Telegram规则, force-policy=Telegram, update-interval=172800, opt-parser=false, enabled=true
-# instagram
-# x
-# Outside AI分流
+[filter_remote]
+https://raw.githubusercontent.com/fangkuia/XPTV/main/X/xptv.sgmodule, tag=xptv分流, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rules/MyBlockAds.list, tag=MyBlockAds, force-policy=reject, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+# OpenAI分流
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=🤖OpenAI, force-policy=OpenAI, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BardAI/BardAI.list, tag=🤖BardAI, force-policy=OpenAI, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Claude/Claude.list, tag=🤖Claude, force-policy=OpenAI, update-interval=172800, opt-parser=false, enabled=true
-# Spotify分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list, tag=🎵Spotify, force-policy=Spotify, update-interval=172800, opt-parser=false, enabled=true
 # TikTok分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list, tag=🎬TikTok规则, force-policy=TikTok, update-interval=172800, opt-parser=false, enabled=true
-# YouTube分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX//YouTube/YouTube.list, tag=🎬YouTube规则, force-policy=YouTube, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Quantumult-X/TikTok.list, tag=🎯TikTok分流, force-policy=TikTok, update-interval=172800, opt-parser=false, enabled=true
+# Unbreak 后续规则修正
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=🎯规则修正-直连, update-interval=172800, opt-parser=false, enabled=true
+# Advertising 广告
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Advertising.list, tag=🛑轻量广告拦截-拒绝, update-interval=172800, opt-parser=false, enabled=true
+# NobyDa大佬去广告 -默认关闭，自行手动启用！
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=🛑重度广告拦截-拒绝, force-policy=reject, update-interval=172800, opt-parser=false, enabled=true
+# Privacy 隐私
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Privacy.list, tag=🛑隐私保护-拒绝, update-interval=172800, opt-parser=false, enabled=true
+# Hijacking 运营商劫持或恶意网站
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Hijacking.list, tag=🛑运营商劫持-拒绝, update-interval=172800, opt-parser=false, enabled=true
 # Netfilx分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list, tag=🎬Netflix, force-policy=Netfilx, update-interval=172800, opt-parser=false , enabled=true
-# Disney
-# 国外影音
-# 港台番剧
-# PayPal
-# Microsoft
-# StreamingCN
-# 加密货币
-# 加密货币分流
-https://raw.githubusercontent.com/w37fhy/QuantumultX/master/Rules/Cryptocurrency, tag=🎯加密货币, force-policy=加密货币, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list, tag=🎬Netflix, force-policy=Netfilx, update-interval=172800, opt-parser=false, enabled=true
 # Streaming 国际流媒体服务
-https://raw.githubusercontent.com/w37fhy/QuantumultX/master/Rules/Streaming.list, tag=🎯国际流媒体, force-policy=节点选择, update-interval=172800, opt-parser=true , enabled=true
-
-https://raw.githubusercontent.com/ddgksf2013/Filter/master/Streaming.list, tag=国际媒体, force-policy=国际媒体, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ddgksf2013/Filter/master/StreamingSE.list, tag=哔哩哔哩, force-policy=哔哩哔哩, update-interval=172800, opt-parser=true, enabled=true
-
-# Streaming!CN
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list, tag=国外影音, force-policy=网速超快, update-interval=172800, opt-parser=true, enabled=true
-
-# StreamingCN
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list, tag=🎞StreamingCN, force-policy=网速超快, update-interval=172800, opt-parser=true, enabled=true
-
-# 全球
-
-
-# 国内
-
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/Streaming.list, tag=🎯国际流媒体, force-policy=节点选择, update-interval=172800, opt-parser=false, enabled=true
 # Global 全球加速
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Global/Global.list, tag=🎯全球加速, force-policy=节点选择, update-interval=172800, opt-parser=false , enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Global.list, tag=🎯全球加速, force-policy=节点选择, update-interval=172800, opt-parser=false, enabled=true
 # China 国内网站
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list, tag=🎯国内网站-直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/China.list, tag=🎯国内网站-直连, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
 # ChinaIP 中国直连
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ChinaIPs/ChinaIPs.list, tag=🎯中国IP-直连, force-policy=direct, update-interval=172800, opt-parser=false , enabled=true
-
-
-
-
-
-
-
-
-
-
-
-
-7
-604800
-
-30
-2592000
-
-
-
-
-
-
-****************************************************************************************************************************
-
-
-
-
-
-****************************************************************************************************************************
-
-
-
-
-
-
-
-
-
-****************************************************************************************************************************
-
-
-
-
-
-# /matrix
-
-# 规则修正
-https://raw.githubusercontent.com/Centralmatrix3/Scripts/master/QuantumultX/Ruleset/Unbreak.list, tag=规则修正, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-# 广告拦截
-https://raw.githubusercontent.com/Centralmatrix3/Scripts/master/QuantumultX/Ruleset/Advertising.list, tag=广告拦截, force-policy=reject, update-interval=172800, opt-parser=false, enabled=true
-
-# 国际媒体
-https://raw.githubusercontent.com/Centralmatrix3/Scripts/master/QuantumultX/Ruleset/GlobalMedia.list, tag=国际媒体, force-policy=国际媒体, update-interval=172800, opt-parser=false, enabled=true
-
-# 港台番剧
-https://raw.githubusercontent.com/Centralmatrix3/Scripts/master/QuantumultX/Ruleset/HMTMedia.list, tag=港台番剧, force-policy=港台番剧, update-interval=172800, opt-parser=false, enabled=true
-
-# 国内媒体
-https://raw.githubusercontent.com/Centralmatrix3/Scripts/master/QuantumultX/Ruleset/ChinaMedia.list, tag=国内媒体, force-policy=国内媒体, update-interval=172800, opt-parser=false, enabled=true
-
-# 全球加速
-https://raw.githubusercontent.com/Centralmatrix3/Scripts/master/QuantumultX/Ruleset/Global.list, tag=全球加速, force-policy=全球加速, update-interval=172800, opt-parser=false, enabled=true
-
-# 苹果服务
-https://raw.githubusercontent.com/Centralmatrix3/Scripts/master/QuantumultX/Ruleset/Apple.list, tag=苹果服务, force-policy=苹果服务, update-interval=172800, opt-parser=false, enabled=true
-
-# LAN规则
-https://raw.githubusercontent.com/Centralmatrix3/Scripts/master/QuantumultX/Ruleset/LAN.list, tag=LAN规则, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-# 国内规则
-https://raw.githubusercontent.com/Centralmatrix3/Scripts/master/QuantumultX/Ruleset/GEOIPCN.list, tag=国内规则, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-
-
-
-
-
-****************************************************************************************************************************
-
-
-
-
-# zhangjun
-
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliuxiuzheng.list, tag=分流修正@fmz200, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliu.list, tag=广告拦截合集@fmz200, update-interval=604800, opt-parser=false, enabled=true
-https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/AI.list, tag=AI分流规则合集@fmz200, force-policy=人工智能, update-interval=172800, opt-parser=true, enabled=true
-https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/unlock/TikTok/TikTok.snippet, tag=TikTok@fmz200, force-policy=海外抖音, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list, tag=Telegram@bm7, force-policy=电报消息, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Google/Google.list, tag=Google@bm7, force-policy=谷歌服务, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list, tag=Spotify@bm7, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GitHub/GitHub.list, tag=Github@bm7, force-policy=proxy, update-interval=172800, opt-parser=false, enabled=true
-
-
-
-****************************************************************************************************************************
-
-
-
-
-# 小白
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct+.list, tag=直连修正, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Advertising.list, tag=广告拦截, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Reject/Tracking.list, tag=隐私保护, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/TikTok.list, tag=海外抖音, force-policy=全球加速, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Google/GoogleVoice.list, tag=谷歌语音, force-policy=美国节点, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Telegram.list, tag=电报代理, force-policy=电报代理, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/!CN.list, tag=国际媒体, force-policy=国际媒体, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/CN.list, tag=港台番剧, force-policy=港台番剧, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy.list, tag=全球加速, force-policy=全球加速, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Apple/Apple.list, tag=苹果服务, force-policy=苹果服务, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Direct.list, tag=国内网站, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/WeChat.list, tag=微信直连, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Proxy+.list, tag=代理修正, force-policy=proxy, update-interval=172800, opt-parser=true, enabled=true
-
-
-
-
-****************************************************************************************************************************
-
-
-
-
-
-# 毒奶
-https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/airports.list, tag=机场专线, force-policy=✈️ 机场专线, enabled=true
-https://limbopro.com/Adblock4limbo.list, tag=毒奶特供(去网页广告计划), force-policy=🛑 广告拦截, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list, tag=🎥 Netflix, force-policy=🎥 Netflix, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Disney/Disney.list, tag=🐭 Disney+, force-policy=🐭 Disney+, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TikTok/TikTok.list,tag=🎵 TikTok, force-policy=🎵 TikTok, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list, tag=🍎 苹果服务, force-policy=🍎 苹果服务, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=🤖 AI Platforms, force-policy=🤖 AI Platforms, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BardAI/BardAI.list, tag=🤖 AI Platforms, force-policy=🤖 AI Platforms, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Claude/Claude.list, tag=🤖 AI Platforms, force-policy=🤖 AI Platforms, enabled=true
-https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/AI_Platforms_qx.list, tag=🤖 AI Platforms, force-policy=🤖 AI Platforms, enabled=true
-
-
-
-
-
-
-****************************************************************************************************************************
-
-
-
-# 莫离
-https://raw.githubusercontent.com/Moli-X/Resources/main/Filter/ADBlack.list, tag=广告名单, force-policy=reject, update-interval=172800, opt-parser=false, enabled=true
-https://github.com/NobyDa/Script/raw/master/Surge/WeChat.list, tag=微信转圈, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/Moli-X/Resources/main/Filter/Overseas.list, tag=海外服务, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/Moli-X/Resources/main/Filter/Mainland.list, tag=大陆服务, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/Moli-X/Resources/main/Filter/YouTube.list, tag=油管分流, update-interval=172800, opt-parser=true, enabled=true
-
-
-
-
-****************************************************************************************************************************
-
-
-
-# 耳东橙
-# Spotify规则
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list, tag=Spotify 规则, force-policy=Spotify, update-interval=86400, opt-parser=false, enabled=true
-# YouTube规则
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX//YouTube/YouTube.list, tag=YouTube 规则, force-policy=YouTube, update-interval=86400, opt-parser=false, enabled=true
-# GlobalMedia规则
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GlobalMedia/GlobalMedia.list, tag=GlobalMedia 规则, force-policy=GlobalMedia, update-interval=86400, opt-parser=false, enabled=true
-# Telegram规则
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list, tag=Telegram 规则, force-policy=Telegram, update-interval=86400, opt-parser=false, enabled=true
-# OpenAI规则
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=OpenAI 规则, force-policy=OpenAI, update-interval=86400, opt-parser=false, enabled=true
-# OutSide规则
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/release/rule/QuantumultX/Global/Global.list, tag=OutSide 规则, force-policy=OutSide, update-interval=86400, opt-parser=false, enabled=true
-# BiliBili规则
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list, tag=Bilibili, force-policy=BiliBili, update-interval=172800, opt-parser=false, enabled=true
-# Advertising规则
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Advertising/Advertising.list, tag=Advertising 规则, force-policy=Advertising, update-interval=86400, opt-parser=true, enabled=true
-# Mainland规则
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list, tag=Mainland 规则, force-policy=Mainland, update-interval=86400, opt-parser=false, enabled=true
-
-
-
-****************************************************************************************************************************
-
-# 烧烤哥
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Advertising/Advertising.list, tag=广告拦截, force-policy=reject, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TestFlight/TestFlight.list, tag=TestFlight, force-policy=节点选择, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list, tag=苹果服务, force-policy=苹果服务, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/YouTube/YouTube.list, tag=油管视频, force-policy=油管视频, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Netflix/Netflix.list, tag=奈飞视频, force-policy=奈飞视频, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Bahamut/Bahamut.list, tag=巴哈姆特, force-policy=巴哈姆特, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GlobalMedia/GlobalMedia.list, tag=国外媒体, force-policy=节点选择, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list, tag=电报消息, force-policy=电报消息, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BiliBili/BiliBili.list, tag=港台番剧, force-policy=港台番剧, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Proxy/Proxy.list, tag=全球规则, force-policy=节点选择, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list, tag=全球直连, force-policy=DIRECT, update-interval=86400, opt-parser=true, enabled=true
-
-
-
-
-
-
-
-****************************************************************************************************************************
-
-
-# 彭于晏
-#分流订阅填写这里
-
-# 超过4万条广告规则, 阻止常见的APP广告/隐私/行为/数据/流量/劫持的统计和追踪
-https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block.txt, tag=AD_Block（4万条去广告规则）, force-policy=广告拦截, update-interval=86400, opt-parser=true, enabled=true
-
-# 超过6万条国内外广告规则, 可以与"AD_Block.txt"一起使用, 注: 可能有一些误杀, 请谨慎使用
-https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=AD_Block_plus（6万条去广告规则）, force-policy=广告拦截, update-interval=86400, opt-parser=true, enabled=true
-
-# 隐私保护
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Privacy.list, tag=隐私保护, force-policy=广告拦截, update-interval=86400, opt-parser=false, enabled=true
-
-# 运营商劫持或恶意网站
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Hijacking.list, tag=运营商劫持, force-policy=广告拦截, update-interval=86400, opt-parser=false, enabled=true
-
-# 规则修正，无需设置策略偏好，保持启用即可
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=规则修正, update-interval=86400, opt-parser=true, enabled=true
-
-# 国外视频
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/Streaming.list, tag=国际视频, force-policy=节点选择, update-interval=86400, opt-parser=true, enabled=true
-
-# 国外网站
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Global.list, tag=国外网站, force-policy=节点选择, update-interval=86400, opt-parser=true, enabled=true
-
-
-
-
-
-
-
-
-
-
-
-
-****************************************************************************************************************************
-# GeQ1an
-
-# 默认不启用网易云音乐（包含在 CMedia 内）、Apple Music/Netflix/Disney Plus/Spotify/YouTube（包含在 GMedia 内）、ChatGPT/Telegram/PayPal（包含在 Outside 内）、TikTok（可能导致字节跳动部分国内服务无法正常使用）、微软（包含在 Mainland 内）规则，如需使用请修改 false 为 true，对于完全不需要的规则，删除即可
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Special.list, tag=Special (Stick Rules), update-interval=43200, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/AdBlock.list, tag=AdBlock (Stick Rules), update-interval=43200, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Netease%20Music.list, tag=Netease Music (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/CMedia.list, tag=CMedia (Stick Rules), update-interval=43200, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Apple%20Music.list, tag=Apple Music (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Disney%20Plus.list, tag=Disney+ (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Netflix.list, tag=Netflix (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Spotify.list, tag=Spotify (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/YouTube.list, tag=YouTube (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/GMedia.list, tag=GMedia (Stick Rules), update-interval=43200, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Apple.list, tag=Apple (Stick Rules), update-interval=43200, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/ChatGPT.list, tag=ChatGPT (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/TikTok.list, tag=TikTok (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Telegram.list, tag=Telegram (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/PayPal.list, tag=PayPal (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Optional/Microsoft.list, tag=Microsoft (Stick Rules), update-interval=43200, enabled=false
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Speedtest.list, tag=Speedtest (Stick Rules), update-interval=43200, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Outside.list, tag=Outside (Stick Rules), update-interval=43200, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Mainland.list, tag=Mainland (Stick Rules), update-interval=43200, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/Mainland%20ASN.list, tag=Mainland ASN (Stick Rules), update-interval=43200, enabled=true
-https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/Filter/LAN.list, tag=LAN (Stick Rules), update-interval=43200, enabled=true
-
-
-
-
-
-
-
-
-
-
-
-
-****************************************************************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-****************************************************************************************************************************
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/ChinaIP.list, tag=🎯中国IP-直连, update-interval=172800, opt-parser=false, enabled=true
+
+[rewrite_remote]
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/cubox.js, tag=cubox, update-interval=-1, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/vvebo.js, tag=vvebo-修复主页, update-interval=-1, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/mubu.js, tag=幕布, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/JavDB_VIP.js, tag=javdb-vip, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/JavDB_AD.js, tag=javdb-ad, update-interval=-1, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/chxm1023/Advertising/main/AppAd.conf, tag=叮当猫-App广告拦截, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Guding.sgmodule, tag=骨钉-合集, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=false
+https://github.com/ddgksf2013/Modules/raw/main/RevenueCat.Vip.sgmodule, tag=猫猫库-RevenueCat, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/StartUp.conf, tag=墨鱼-去开屏合集, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/WesleyRhodes/Script/main/shadowsocks/xueqiu.module, tag=广告必须死-雪球, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/Yu9191/Rewrite/main/jikeshijian.js, tag=叮当猫-即刻时间, update-interval=172800, opt-parser=true, enabled=false
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/zhihu.snippet, tag=广告必须死-zhihu, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=false
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/xiaohongshu.snippet, tag=广告必须死-xiaohongshu, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=false
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/amap.snippet, tag=广告必须死-amap, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=false
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/weibo.snippet, tag=广告必须死-weibo, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=false
+
+https://raw.githubusercontent.com/Yu9191/Rewrite/main/QDDS.conf, tag=叮当猫-起点读书, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=false
+https://whatshub.top/rewrite/4in1.conf, tag=yfamily-4in1, update-interval=172800, opt-parser=false, enabled=true
+https://yfamily.vercel.app/rewrite/adultraplus.conf, tag=yfamily-去开屏广告u, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://whatshub.top/rewrite/adultraplus.conf, tag=yfamily-去开屏广告, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://yfamily.vercel.app/rewrite/startingad.conf, tag=yfamily-去开屏广告, update-interval=172800, opt-parser=false, enabled=true
+https://yfamily.vercel.app/rewrite/grow.conf, tag=yfamily-graw, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=false
+https://yfamily.vercel.app/rewrite/bfs.conf, tag=yfamily-safari bing, update-interval=172800, opt-parser=false, enabled=true
+https://yfamily.vercel.app/rewrite/smwd.conf, tag=yfamily-石墨文档, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/chxm1023/Rewrite/main/renrenshipin.js, tag=人人视频, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes/MJ.js, tag=mj中文, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/chxm1023/Rewrite/main/Revenuecat/serverbee.js, tag=serverbee, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=false
+https://raw.githubusercontent.com/chxm1023/Script_X/main/Collections.conf, tag=叮当猫-APP解锁合集, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=false
+https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/cnftp.snippet, tag=cnftp-视频去公告, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+
+https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Quantumult-X/TikTok-TW.conf, tag=解锁TikTok台湾区, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Quantumult-X/TikTok-JP.conf, tag=解锁TikTok日本区, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Quantumult-X/TikTok-KR.conf, tag=解锁TikTok韩国区, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Quantumult-X/TikTok-US.conf, tag=解锁TikTok美国区, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.quanx.tf.conf, tag=Boxjs, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/w37fhy/QuantumultX/master/QuantumultX_JS.conf, tag=比价等脚本, update-interval=86400, opt-parser=false, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/TestFlightDownload.conf , tag=TestFlight区域限制解除, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/Orz-3/QuantumultX/master/YouTube.conf, tag=YouTube去广告, update-interval=86400, opt-parser=true, enabled=false
+https://raw.githubusercontent.com/w37fhy/QuantumultX/master/QuantumultX_Cookie.conf, tag=获取Cookie, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/qiangxinglin/Emby/main/QuantumultX/emby.conf, tag=Emby Premiere, update-interval=86400, opt-parser=false, enabled=false
+
+
+[filter_local]
+host-suffix, huggingface.co, 节点选择
+host-suffix, yfamily.vercel.app, 节点选择
+host-suffix, discord.gg, 自动选择
+host-suffix, jp1.boom.skin, 日本
+host-suffix, javdb.com, 美国
+host-suffix, sentry.io, reject
+host-keyword, exitgames.com, 节点选择
+host-suffix, bnbstatic.com, 节点选择
+host-suffix, local, direct
+ip-cidr, 192.168.0.0/16, direct
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 100.64.0.0/10, direct
+ip-cidr, 224.0.0.0/4, direct
+ip6-cidr, fe80::/10, direct
+
+#Tips 屏蔽 iOS 升级（系统，非商店）
+host, mesu.apple.com, reject
+host, gdmf.apple.com, reject
+host, updates-http.cdn-apple.com, reject
+
+# GEOIP,CN,DIRECT
+FINAL,漏网之鱼
+
+[rewrite_local]
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(queryTemplates|serverConfig)$ url script-request-header https://raw.githubusercontent.com/chiupam/surge/main/scripts/javascripts/wskey.js
+
+^https:\/\/license\.pdfexpert\.com\/api\/2\.0\/pdfexpert6\/subscription\/refresh url script-request-body https://raw.githubusercontent.com/Yu9191/Rewrite/main/PDFexpert.js
+
+^https:\/\/api\.guoqi365\.com\/1\.1\/functions\/getUserInfo url script-response-body https://raw.githubusercontent.com/Yu9191/Rewrite/main/guoqila.js
+
+^https:\/\/api\.hummingbird\.businessreview\.global\/api\/subscriptions\/get_active url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/jjxrsl.js
+
+^https?:\/\/snailsleep\.net\/snail\/v\d\/profile\/get.+ url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/woniushuimian.js
+
+^https:\/\/service\.ilovepdf\.com\/v1\/user url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/ilove.js
+
+https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} url echo-response text/json echo-response https://raw.githubusercontent.com/chxm1023/Rewrite/main/Nicegram.js
+
+^https:\/\/xunji\.gxzckj\.com\/whole_user_info_v3 url script-response-body https://raw.githubusercontent.com/Yu9191/Rewrite/main/xunji.js
+
+
+^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes/Motivation.js
+
+^https:\/\/api-service\.tutusouti\.com\/appServiceApi\/(vip\/newUserPayVipData|video\/videoDetail) url script-response-body https://raw.githubusercontent.com/Yu9191/Rewrite/main/kaotu.js
+
+
+
+^https?:\/\/api\.hujuvod\.com\/(user\/personal\/information|app\/drama\/page) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/renrenshipin.js
+
+
+[task_local]
+
+[mitm]
+hostname = passport.iqiyi.com, i.meituan.com, www.52pojie.cn, api.m.jd.com, *.bilibili.com, music.163.com, act.10010.com, m.client.10010.com, nebula.kuaishou.com, trade-acs.m.taobao.com, mp.weixin.qq.com, ms.jr.jd.com, wapside.189.cn, wx.10086.cn, draw.jdfcloud.com, jdjoy.jd.com, license.pdfexpert.com, api.guoqi365.com, api.hummingbird.businessreview.global, snailsleep.net, restore-access.indream.app, service.ilovepdf.com, xunji.gxzckj.com, newdrugs.dxy.cn, firstclass.tripsy.app, buy.itunes.apple.com, api-service.tutusouti.com, oxfordx.cp.com.cn,api.hujuvod.com,api.ankichinas.com
+#, api.revenuecat.com
