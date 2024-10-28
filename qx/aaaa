@@ -1,49 +1,43 @@
+
+# 自用解锁
 https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/revenuecat_rewrite.conf, tag=自用-revenvecat, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/itunes_rewrite.conf, tag=自用-itunes, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/ownuseapp_rewrite.conf, tag=自用重写, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/chxm1023/Advertising/main/AppAd.conf, tag=叮当猫-App广告拦截, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf, tag=墨鱼-去开屏合集, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
-# ======= 会员解锁 ======= #
-
-# ======= 广告净化 ======= #
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zheye/zheye.snippet, tag=知乎去广告及体验增强@blackmatrix7, update-interval=86400, opt-parser=false, enabled=true
-https://github.com/app2smile/rules/raw/master/module/tieba-qx.conf, tag=百度贴吧去广告@app2smile, update-interval=86400, opt-parser=false, enabled=true
-https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/NeteaseAds.conf, tag=网易云音乐去广告@ddgksf2013, update-interval=86400, opt-parser=false, enabled=false
-
-# ======= 网页优化 ======= #
-https://github.com/ddgksf2013/Rewrite/raw/master/Html/Douban.conf, tag=豆瓣网页观影快捷跳转@ddgksf2013, update-interval=86400, opt-parser=false, enabled=true
-
-# ======= 功能增强 ======= #
-https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShu.conf, tag=小红书净化+去水印@ddgksf2013, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/UnblockURLinWeChat.conf, tag=微信解锁被屏蔽的URL@zZPiglet, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/xids2016/ios_app/main/qx/rewrite/ownuseappvip_rewrite.conf, tag=自用-app解锁, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 
 # 去广告
+# 开屏广告-参考: https://whatshub.top/quantumultx
+https://whatshub.top/rewrite/adultraplus.conf, tag=Yfamily-APP启动页去广告ultra+, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+# 通用广告
+https://raw.githubusercontent.com/chxm1023/Advertising/main/AppAd.conf, tag=叮当猫-App广告拦截, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/AdvertisingLite/AdvertisingLite.conf, tag=🚫去广告lite, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/AdvertisingScript/AdvertisingScript.conf, tag=🚫去广告script, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/QuantumultX/Redirect/Redirect.conf, tag=🚫重定向, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+# app广告
+https://raw.githubusercontent.com/WesleyRhodes/Script/main/shadowsocks/xueqiu.module, tag=广告必须死-雪球, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 
-# 解锁
+
+# 解锁tiktok
 https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Quantumult-X/TikTok-TW.conf, tag=解锁TikTok台湾区, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Quantumult-X/TikTok-JP.conf, tag=解锁TikTok日本区, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Quantumult-X/TikTok-KR.conf, tag=解锁TikTok韩国区, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Quantumult-X/TikTok-US.conf, tag=解锁TikTok美国区, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 
-# https://github.com/Guding88/Script/tree/main
-https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Guding.sgmodule, tag=骨钉-合集, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=false
-https://github.com/ddgksf2013/Modules/raw/main/RevenueCat.Vip.sgmodule, tag=猫猫库-RevenueCat, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=false
 
-https://raw.githubusercontent.com/WesleyRhodes/Script/main/shadowsocks/xueqiu.module, tag=广告必须死-雪球, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/Yu9191/Rewrite/main/jikeshijian.js, tag=叮当猫-即刻时间, update-interval=172800, opt-parser=true, enabled=false
+# ======= 功能增强 ======= #
+https://github.com/app2smile/rules/raw/master/module/tieba-qx.conf, tag=百度贴吧去广告@app2smile, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/NeteaseAds.conf, tag=网易云音乐去广告@ddgksf2013, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=false
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShu.conf, tag=小红书净化+去水印@ddgksf2013, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/UnblockURLinWeChat.conf, tag=微信解锁被屏蔽的URL@zZPiglet, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zheye/zheye.snippet, tag=知乎去广告及体验增强@blackmatrix7, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://yfamily.vercel.app/rewrite/bfs.conf, tag=yfamily-safari bing, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/SmzdmAds.conf, tag=什么值得买去广告@ddgksf2013, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/UnblockURLinWeChat.conf, tag=微信110解锁被屏蔽的URL@ddgksf2013, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 
-https://whatshub.top/rewrite/4in1.conf, tag=yfamily-4in1, update-interval=172800, opt-parser=false, enabled=true
-https://yfamily.vercel.app/rewrite/adultraplus.conf, tag=yfamily-去开屏广告u, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
-https://whatshub.top/rewrite/adultraplus.conf, tag=yfamily-去开屏广告, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
-https://yfamily.vercel.app/rewrite/startingad.conf, tag=yfamily-去开屏广告, update-interval=172800, opt-parser=false, enabled=true
-https://yfamily.vercel.app/rewrite/bfs.conf, tag=yfamily-safari bing, update-interval=172800, opt-parser=false, enabled=true
-https://yfamily.vercel.app/rewrite/smwd.conf, tag=yfamily-石墨文档, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
-https://raw.githubusercontent.com/RuCu6/QuanX/main/Rewrites/Cube/cnftp.snippet, tag=cnftp-视频去公告, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=false
-
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/TestFlightDownload.conf , tag=TestFlight区域限制解除, update-interval=172800, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/Orz-3/QuantumultX/master/YouTube.conf, tag=YouTube去广告, update-interval=86400, opt-parser=true, enabled=false
-https://raw.githubusercontent.com/w37fhy/QuantumultX/master/QuantumultX_Cookie.conf, tag=获取Cookie, update-interval=86400, opt-parser=false, enabled=false
-https://raw.githubusercontent.com/qiangxinglin/Emby/main/QuantumultX/emby.conf, tag=Emby Premiere, update-interval=86400, opt-parser=false, enabled=false
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.surge.sgmodule, tag=boxjs, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/refs/heads/main/snippet/Location.snippet, tag=app-Locatio@VirgilClyne, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/refs/heads/main/snippet/Maps.snippet, tag=app-Maps@VirgilClyne, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/refs/heads/main/snippet/News.snippet, tag=app-News@VirgilClyne, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/refs/heads/main/snippet/Siri.snippet, tag=app-Siri@VirgilClyne, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/refs/heads/main/snippet/TV.snippet, tag=app-TV@VirgilClyne, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/refs/heads/main/snippet/TestFlight.snippet, tag=app-TestFlight@VirgilClyne, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/refs/heads/main/snippet/Weather.snippet, tag=app-Weather@VirgilClyne, update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
