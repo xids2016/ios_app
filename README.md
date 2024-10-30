@@ -1,2 +1,3 @@
-# about
-Purely for personal use
+# qx
+# trollstore
+# app list
