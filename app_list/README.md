@@ -6,3 +6,5 @@ https://github.com/tBox2010/tBox
 ```
 配置地址: https://raw.githubusercontent.com/tBox2010/tBox/refs/heads/main/peizhi.json
 ```
+## 2. 聚合直播
+https://github.com/xiaoyaocz/dart_simple_live
